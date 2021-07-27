@@ -1,0 +1,2 @@
+rootProject.name = "GPT-Bakery"
+include ':app'

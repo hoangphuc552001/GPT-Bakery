@@ -1,0 +1,77 @@
+{
+  "project_info": {
+    "project_number": "824255822149",
+    "firebase_url": "https://gpt-bakerycake-default-rtdb.firebaseio.com",
+    "project_id": "gpt-bakerycake",
+    "storage_bucket": "gpt-bakerycake.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:824255822149:android:92992b8295a7ada221e62c",
+        "android_client_info": {
+          "package_name": "com.test.gpt_bakery"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "824255822149-38q2vq6kej5qdqdcukio66l8njcgqk99.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA7S04uFv5t7U5gsYiCjIaoEchwxOckDiA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "824255822149-38q2vq6kej5qdqdcukio66l8njcgqk99.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:824255822149:android:abdb88c96163df5f21e62c",
+        "android_client_info": {
+          "package_name": "com.test.myapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "824255822149-mh6vk7tffj036lse03iubn83ko8ua4s2.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.test.myapplication",
+            "certificate_hash": "e281c0261836205d183f3938e1b9b6fa88af8117"
+          }
+        },
+        {
+          "client_id": "824255822149-38q2vq6kej5qdqdcukio66l8njcgqk99.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA7S04uFv5t7U5gsYiCjIaoEchwxOckDiA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "824255822149-38q2vq6kej5qdqdcukio66l8njcgqk99.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
