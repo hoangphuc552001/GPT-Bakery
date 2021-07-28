@@ -102,7 +102,8 @@
                 android:text="OR"
                 android:layout_marginTop="10dp"
                 android:textAlignment="center"
-                android:textColor="#090909"/>
+                android:textColor="#090909"
+                android:gravity="center_horizontal" />
             <TableRow
                 android:id="@+id/dr"
                 android:layout_width="103dp"

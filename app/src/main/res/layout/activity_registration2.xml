@@ -28,7 +28,7 @@
             android:orientation="vertical">
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/Firstname"
+                android:id="@+id/Namecustomer"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp">
@@ -36,26 +36,13 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="FirstName"
+                    android:hint="Name"
                     android:inputType="text" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/Lastname"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="11dp">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="LastName"
-                    android:inputType="text" />
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/Email"
+                android:id="@+id/Emailcustomer"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="11dp">
@@ -70,7 +57,7 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/Pwd"
+                android:id="@+id/Pwdcustomer"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="11dp"
@@ -84,7 +71,7 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/Cpass"
+                android:id="@+id/Cpasscustomer"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="12dp"
@@ -104,13 +91,13 @@
                 android:orientation="horizontal">
 
                 <com.hbb20.CountryCodePicker
-                    android:id="@+id/CountryCode"
+                    android:id="@+id/CountryCodecustomer"
                     android:layout_width="120dp"
                     android:layout_height="match_parent"
                     tools:ignore="ExtraText,MissingClass" />
 
                 <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/Mobileno"
+                    android:id="@+id/Mobilenocustomer"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
@@ -122,9 +109,27 @@
                 </com.google.android.material.textfield.TextInputLayout>
             </LinearLayout>
 
+            <Spinner
+                android:id="@+id/Stateecustomer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:entries="@array/State" />
 
+            <TextView
+                android:id="@+id/txt4customer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="11dp"
+                android:text="District" />
+
+            <Spinner
+                android:id="@+id/Cityscustomer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp" />
             <Button
-                android:id="@+id/Signup"
+                android:id="@+id/Signupcustomer"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:layout_marginTop="20dp"
@@ -143,14 +148,14 @@
                 android:orientation="horizontal">
 
                 <TableRow
-                    android:id="@+id/hr"
+                    android:id="@+id/hrcustomer"
                     android:layout_width="105dp"
                     android:layout_height="1dp"
                     android:layout_marginTop="20dp"
                     android:background="#595858" />
 
                 <TextView
-                    android:id="@+id/OR"
+                    android:id="@+id/ORcustomer"
                     android:layout_width="44dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
@@ -162,7 +167,7 @@
                     android:textSize="17sp" />
 
                 <TableRow
-                    android:id="@+id/dr"
+                    android:id="@+id/drcustomer"
                     android:layout_width="105dp"
                     android:layout_height="1dp"
                     android:layout_marginTop="20dp"
@@ -170,7 +175,7 @@
             </LinearLayout>
 
             <TextView
-                android:id="@+id/tvv"
+                android:id="@+id/tvvcustomer"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
@@ -188,7 +193,7 @@
                 android:orientation="horizontal">
 
                 <Button
-                    android:id="@+id/email"
+                    android:id="@+id/emailcustomer"
                     android:layout_width="95dp"
                     android:layout_height="40dp"
                     android:layout_marginLeft="15dp"
@@ -200,7 +205,7 @@
                     android:textColor="#FFFFFF" />
 
                 <Button
-                    android:id="@+id/phone"
+                    android:id="@+id/phonecustomer"
                     android:layout_width="97dp"
                     android:layout_height="40dp"
                     android:layout_marginLeft="30dp"

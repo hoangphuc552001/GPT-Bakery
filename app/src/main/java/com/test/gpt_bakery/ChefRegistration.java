@@ -171,6 +171,20 @@ public class ChefRegistration extends AppCompatActivity {
             }
 
         });
+        Emaill.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(ChefRegistration.this,Cheflogin.class));
+                finish();
+            }
+        });
+        Phone.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(ChefRegistration.this,Chefloginphone.class));
+                finish();
+            }
+        });
 
     }
     String emailpattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
