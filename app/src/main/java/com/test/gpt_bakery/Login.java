@@ -15,6 +15,11 @@ import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import android.os.Bundle;
 
@@ -26,7 +31,8 @@ public class Login extends AppCompatActivity {
     TextView signupcustomer;
     FirebaseAuth Fauthcustomer;
     String emailidcustomer,pwdcustomer;
-
+    FirebaseDatabase firebaseDatabase;
+    DatabaseReference databaseReference;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -65,12 +71,27 @@ public class Login extends AppCompatActivity {
                                     mDialog.dismiss();
 
                                     if(Fauthcustomer.getCurrentUser().isEmailVerified()){
-                                        mDialog.dismiss();
-                                        Toast.makeText(Login.this, "Congratulation! You Have Successfully Login", Toast.LENGTH_SHORT).show();
-                                        Intent Z = new Intent(Login.this,FoodPanelBottomNavigation.class);
-                                        startActivity(Z);
-                                        finish();
-
+                                        databaseReference = FirebaseDatabase.getInstance().getReference("User").child(FirebaseAuth.getInstance().getUid()+"/Role");
+                                        databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
+                                            @Override
+                                            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                                                String role = snapshot.getValue(String.class);
+                                                if(role.equals("Customer")){
+                                                    mDialog.dismiss();
+                                                    Toast.makeText(Login.this, "Congratulation! You Have Successfully Login", Toast.LENGTH_SHORT).show();
+                                                    Intent Z = new Intent(Login.this,ChefFoodPanel_BottomNavigation.class);
+                                                    startActivity(Z);
+                                                    finish();
+                                                }
+                                                else{
+                                                    Toast.makeText(Login.this, "Wrong role account", Toast.LENGTH_SHORT).show();
+                                                }
+                                            }
+                                            @Override
+                                            public void onCancelled(@NonNull DatabaseError error) {
+                                                Toast.makeText(Login.this,error.getMessage(),Toast.LENGTH_LONG).show();
+                                            }
+                                        });
                                     }else{
                                         ReusableCodeForAll.ShowAlert(Login.this,"Verification Failed","You Have Not Verified Your Email");
 

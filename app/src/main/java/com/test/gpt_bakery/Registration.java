@@ -95,7 +95,7 @@ public class Registration extends AppCompatActivity {
             public void onNothingSelected(AdapterView<?> parent) {
             }
         });
-        databaseReferencecustomer = firebaseDatabasecustomer.getInstance().getReference("Chef");
+        databaseReferencecustomer = firebaseDatabasecustomer.getInstance().getReference("Customer");
         FAuthcustomer = FirebaseAuth.getInstance();
         signupcustomer.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -132,7 +132,7 @@ public class Registration extends AppCompatActivity {
                                         hashMap1.put("Password",passwordcustomer);
                                         hashMap1.put("State",stateecustomer);
                                         hashMap1.put("Confirm Password",confpasswordcustomer);
-                                        firebaseDatabasecustomer.getInstance().getReference("Chef")
+                                        firebaseDatabasecustomer.getInstance().getReference("Customer")
                                                 .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
                                                 .setValue(hashMap1).addOnCompleteListener(new OnCompleteListener<Void>() {
                                             @Override
@@ -174,14 +174,14 @@ public class Registration extends AppCompatActivity {
         Emaillcustomer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(Registration.this,Cheflogin.class));
+                startActivity(new Intent(Registration.this,Login.class));
                 finish();
             }
         });
         Phonecustomer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(Registration.this,Chefloginphone.class));
+                startActivity(new Intent(Registration.this,Loginphone.class));
                 finish();
             }
         });

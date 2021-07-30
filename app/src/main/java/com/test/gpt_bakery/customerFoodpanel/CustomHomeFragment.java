@@ -1,4 +1,6 @@
-package com.test.gpt_bakery.chefFoodpanel;
+package com.test.gpt_bakery.customerFoodpanel;
+
+import androidx.fragment.app.Fragment;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,19 +13,16 @@ import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.fragment.app.Fragment;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.test.gpt_bakery.MainMenu;
 import com.test.gpt_bakery.R;
 
-public class ChefHomeFragment extends Fragment {
-
+public class CustomHomeFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-
-        View v = inflater.inflate(R.layout.fragment_chef_home,null);
+        View v = inflater.inflate(R.layout.fragment_customerhome, null);
         getActivity().setTitle("Home");
         setHasOptionsMenu(true);
         return v;
