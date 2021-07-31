@@ -79,7 +79,7 @@ public class Login extends AppCompatActivity {
                                                 if(role.equals("Customer")){
                                                     mDialog.dismiss();
                                                     Toast.makeText(Login.this, "Congratulation! You Have Successfully Login", Toast.LENGTH_SHORT).show();
-                                                    Intent Z = new Intent(Login.this,ChefFoodPanel_BottomNavigation.class);
+                                                    Intent Z = new Intent(Login.this,CustomerFoodPanel_BottomNavigation.class);
                                                     startActivity(Z);
                                                     finish();
                                                 }
