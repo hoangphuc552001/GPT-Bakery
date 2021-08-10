@@ -28,7 +28,7 @@ public class Login extends AppCompatActivity {
 
     TextInputLayout emailcustomer,passcustomer;
     Button Signincustomer,Signinphonecustomer;
-    TextView signupcustomer;
+    TextView signupcustomer,forgotpassword;
     FirebaseAuth Fauthcustomer;
     String emailidcustomer,pwdcustomer;
     FirebaseDatabase firebaseDatabase;
@@ -45,8 +45,16 @@ public class Login extends AppCompatActivity {
             Signincustomer = (Button)findViewById(R.id.button4customer);
             signupcustomer = (TextView) findViewById(R.id.textView3customer);
             Signinphonecustomer = (Button)findViewById(R.id.btnphonecustomer);
-
+            forgotpassword=(TextView)findViewById(R.id.forgotpasscustomer);
             Fauthcustomer = FirebaseAuth.getInstance();
+            forgotpassword.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent Z = new Intent(Login.this,Forgotpassword.class);
+                    startActivity(Z);
+                    finish();
+                }
+            });
 
             Signincustomer.setOnClickListener(new View.OnClickListener() {
                 @Override

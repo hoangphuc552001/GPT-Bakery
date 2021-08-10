@@ -55,11 +55,11 @@ public class CustomerFoodPanel_BottomNavigation extends AppCompatActivity implem
                 fragment=new CustomTrackFragment();
                 break;
         }
-        return loadcheffragment(fragment);
+        return loadcustomerfragment(fragment);
 
     }
 
-    private boolean loadcheffragment(Fragment fragment) {
+    private boolean loadcustomerfragment(Fragment fragment) {
 
         if(fragment != null){
             getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,fragment).commit();

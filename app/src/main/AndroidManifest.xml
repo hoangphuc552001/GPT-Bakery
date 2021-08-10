@@ -9,7 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.GPTBakery">
-        <activity android:name=".CustomerFoodPanel_BottomNavigation"></activity>
+        <activity android:name=".customerFoodpanel.UpdateCustomer"></activity>
+        <activity android:name=".Forgotpassword" />
+        <activity android:name=".CustomerFoodPanel_BottomNavigation" />
         <activity android:name=".ChefFoodPanel_BottomNavigation" />
         <activity android:name=".ChefRegisterPhone" />
         <activity android:name=".Registration" />

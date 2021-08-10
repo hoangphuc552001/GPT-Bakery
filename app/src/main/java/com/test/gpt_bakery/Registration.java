@@ -125,13 +125,13 @@ public class Registration extends AppCompatActivity {
                                     @Override
                                     public void onComplete(@NonNull Task<Void> task) {
                                         HashMap<String , String> hashMap1 = new HashMap<>();
-                                        hashMap1.put("Mobile No",mobilecustomer);
+                                        hashMap1.put("MobileNo",mobilecustomer);
                                         hashMap1.put("Name",namecustomer);
                                         hashMap1.put("EmailId",emailidcustomer);
                                         hashMap1.put("City",cityycustomer);
                                         hashMap1.put("Password",passwordcustomer);
                                         hashMap1.put("State",stateecustomer);
-                                        hashMap1.put("Confirm Password",confpasswordcustomer);
+                                        hashMap1.put("ConfirmPassword",confpasswordcustomer);
                                         firebaseDatabasecustomer.getInstance().getReference("Customer")
                                                 .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
                                                 .setValue(hashMap1).addOnCompleteListener(new OnCompleteListener<Void>() {

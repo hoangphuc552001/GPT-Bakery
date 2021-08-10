@@ -31,7 +31,6 @@ public class Cheflogin extends AppCompatActivity {
     TextView signup;
     FirebaseAuth Fauth;
     String emailid,pwd;
-    FirebaseDatabase firebaseDatabase;
     DatabaseReference databaseReference;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
