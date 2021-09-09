@@ -2,6 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.test.gpt_bakery">
 
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,21 +12,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.GPTBakery">
-        <activity android:name=".customerFoodpanel.UpdateCustomer"></activity>
-        <activity android:name=".Forgotpassword" />
+        <activity android:name=".Place_Order"></activity>
+        <activity android:name=".Payment" />
+        <activity android:name=".ForgotPassword" />
+        <activity android:name=".UpdateCustomer" />
+        <activity
+            android:name=".AdminActivity"
+            android:exported="true" />
         <activity android:name=".CustomerFoodPanel_BottomNavigation" />
         <activity android:name=".ChefFoodPanel_BottomNavigation" />
-        <activity android:name=".ChefRegisterPhone" />
         <activity android:name=".Registration" />
-        <activity android:name=".ChefRegistration" />
-        <activity android:name=".Chefloginphone" />
         <activity android:name=".Loginphone" />
         <activity android:name=".Login" />
-        <activity android:name=".Delivery_Registration" />
-        <activity android:name=".Delivery_Loginphone" />
-        <activity android:name=".Delivery_Login" />
-        <activity android:name=".Cheflogin" />
-        <activity android:name=".ChooseOne" />
         <activity android:name=".MainMenu" />
         <activity android:name=".MainActivity">
             <intent-filter>

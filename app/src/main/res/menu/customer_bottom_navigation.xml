@@ -17,7 +17,7 @@
     <item
         android:title="Track"
         android:id="@+id/track"
-        android:icon="@drawable/ic_baseline_schedule_24"/>
+        android:icon="@drawable/ic_baseline_star_rate_24"/>
     <item
         android:title="Profile"
         android:id="@+id/cust_profile"

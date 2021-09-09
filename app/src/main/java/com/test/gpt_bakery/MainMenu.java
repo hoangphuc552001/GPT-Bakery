@@ -71,7 +71,7 @@ public class MainMenu extends AppCompatActivity {
         signinemail.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent signemail = new Intent(MainMenu.this,ChooseOne.class);
+                Intent signemail = new Intent(MainMenu.this,Login.class);
                 signemail.putExtra("Home","Email");
                 startActivity(signemail);
                 finish();
@@ -81,7 +81,7 @@ public class MainMenu extends AppCompatActivity {
         signinphone.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent signphone = new Intent(MainMenu.this,ChooseOne.class);
+                Intent signphone = new Intent(MainMenu.this,Login.class);
                 signphone.putExtra("Home","Phone");
                 startActivity(signphone);
                 finish();
@@ -91,7 +91,7 @@ public class MainMenu extends AppCompatActivity {
         signup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent signup = new Intent(MainMenu.this,ChooseOne.class);
+                Intent signup = new Intent(MainMenu.this,Registration.class);
                 signup.putExtra("Home","SignUp");
                 startActivity(signup);
                 finish();

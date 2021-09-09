@@ -50,7 +50,7 @@ public class Login extends AppCompatActivity {
             forgotpassword.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Intent Z = new Intent(Login.this,Forgotpassword.class);
+                    Intent Z = new Intent(Login.this,ForgotPassword.class);
                     startActivity(Z);
                     finish();
                 }
@@ -64,35 +64,36 @@ public class Login extends AppCompatActivity {
                     pwdcustomer = passcustomer.getEditText().getText().toString().trim();
 
                     if(isValid()){
-
                         final ProgressDialog mDialog = new ProgressDialog(Login.this);
                         mDialog.setCanceledOnTouchOutside(false);
                         mDialog.setCancelable(false);
                         mDialog.setMessage("Sign In Please Wait.......");
                         mDialog.show();
-
                         Fauthcustomer.signInWithEmailAndPassword(emailidcustomer,pwdcustomer).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                             @Override
                             public void onComplete(@NonNull Task<AuthResult> task) {
 
                                 if(task.isSuccessful()){
                                     mDialog.dismiss();
-
                                     if(Fauthcustomer.getCurrentUser().isEmailVerified()){
-                                        databaseReference = FirebaseDatabase.getInstance().getReference("User").child(FirebaseAuth.getInstance().getUid()+"/Role");
+                                        databaseReference = FirebaseDatabase.getInstance().getReference("Customer").child(FirebaseAuth.getInstance().getUid()+"/EmailId");
                                         databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
                                             @Override
                                             public void onDataChange(@NonNull DataSnapshot snapshot) {
                                                 String role = snapshot.getValue(String.class);
-                                                if(role.equals("Customer")){
+                                                if(role.equals("hphuc05vo24@gmail.com")){
+                                                    mDialog.dismiss();
+                                                    Toast.makeText(Login.this, "Congratulation! You Have Successfully Login", Toast.LENGTH_SHORT).show();
+                                                    Intent Z = new Intent(Login.this,ChefFoodPanel_BottomNavigation.class);
+                                                    startActivity(Z);
+                                                    finish();
+                                                }
+                                                else{
                                                     mDialog.dismiss();
                                                     Toast.makeText(Login.this, "Congratulation! You Have Successfully Login", Toast.LENGTH_SHORT).show();
                                                     Intent Z = new Intent(Login.this,CustomerFoodPanel_BottomNavigation.class);
                                                     startActivity(Z);
                                                     finish();
-                                                }
-                                                else{
-                                                    Toast.makeText(Login.this, "Wrong role account", Toast.LENGTH_SHORT).show();
                                                 }
                                             }
                                             @Override

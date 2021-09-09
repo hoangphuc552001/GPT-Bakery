@@ -1,7 +1,5 @@
 package com.test.gpt_bakery.customerFoodpanel;
 
-import androidx.fragment.app.Fragment;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -13,6 +11,7 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -24,12 +23,10 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.test.gpt_bakery.Customer;
-import com.test.gpt_bakery.CustomerFoodPanel_BottomNavigation;
-import com.test.gpt_bakery.Forgotpassword;
-import com.test.gpt_bakery.Login;
-import com.test.gpt_bakery.MainActivity;
 import com.test.gpt_bakery.MainMenu;
 import com.test.gpt_bakery.R;
+import com.test.gpt_bakery.UpdateCustomer;
+
 public class CustomProfileFragment extends Fragment{
     private TextView emailcustomer,namecustomer,mobilecustomer,statecustomer,citycustomer;
     private FirebaseUser user;
@@ -53,6 +50,13 @@ public class CustomProfileFragment extends Fragment{
         userRef=FirebaseDatabase.getInstance().getReference("Customer");
         logout=(Button)v.findViewById(R.id.signOut);
         auth=FirebaseAuth.getInstance();
+        update.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent Z = new Intent(getActivity(), UpdateCustomer.class);
+                startActivity(Z);
+            }
+        });
         rspww.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -66,7 +70,7 @@ public class CustomProfileFragment extends Fragment{
                             public void onComplete(@NonNull Task<Void> task) {
                                 if (task.isSuccessful())
                                 {
-                                    Toast.makeText(getActivity(),"Check your email to reset password",Toast.LENGTH_LONG).show();
+                                    Toast.makeText(getActivity(),"Check your email to reset password!!!",Toast.LENGTH_LONG).show();
                                 }
                             }
                         });
@@ -82,8 +86,8 @@ public class CustomProfileFragment extends Fragment{
         logout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                    FirebaseAuth.getInstance().signOut();
-                    startActivity(new Intent(getActivity(),MainMenu.class));
+                FirebaseAuth.getInstance().signOut();
+                startActivity(new Intent(getActivity(),MainMenu.class));
             }
         });
         userID=user.getUid();
