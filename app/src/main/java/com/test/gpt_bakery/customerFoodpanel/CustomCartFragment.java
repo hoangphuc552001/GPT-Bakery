@@ -59,8 +59,8 @@ public class CustomCartFragment extends Fragment implements CartRecViewAdapter.c
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-
         cartView = view.findViewById(R.id.cartRecView);
+		/// support passing data from homepage to Cart
         adapter = new CartRecViewAdapter(getContext(), this);
 
         for (Cookie c: chosenCookies
@@ -77,6 +77,7 @@ public class CustomCartFragment extends Fragment implements CartRecViewAdapter.c
     }
 
     @Override
+	/// chang quantity of cookies
     public void onChangeQuantityClick(Cookie cookie, String action, int position) {
         if (action.equals("+")){
             cookie.increaseQuantity();
