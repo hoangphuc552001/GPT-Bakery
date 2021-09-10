@@ -73,7 +73,7 @@ public class CartRecViewAdapter extends RecyclerView.Adapter<CartRecViewAdapter.
             btnDecrease = itemView.findViewById(R.id.btnDecrease);
         }
     }
-
+/// change the quantity of cookies
     public interface changeQuantityListener{
         void onChangeQuantityClick(Cookie cookie, String action, int position);
     }
