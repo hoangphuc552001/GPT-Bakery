@@ -81,7 +81,7 @@ public class Login extends AppCompatActivity {
                                             @Override
                                             public void onDataChange(@NonNull DataSnapshot snapshot) {
                                                 String role = snapshot.getValue(String.class);
-                                                if(role.equals("hphuc05vo24@gmail.com")){
+                                                if(role.equals("canhtoan16@gmail.com")){
                                                     mDialog.dismiss();
                                                     Toast.makeText(Login.this, "Congratulation! You Have Successfully Login", Toast.LENGTH_SHORT).show();
                                                     Intent Z = new Intent(Login.this,ChefFoodPanel_BottomNavigation.class);

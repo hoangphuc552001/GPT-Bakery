@@ -65,6 +65,7 @@ public class CustomOrderFragment extends Fragment {
                 databaseReference.addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(DataSnapshot snapshot) {
+                        int i=0;
                       for (DataSnapshot snapshot1:snapshot.getChildren())
                       {
                           Customer c=snapshot1.getValue(Customer.class);
@@ -98,20 +99,21 @@ public class CustomOrderFragment extends Fragment {
                                   statecheck.setText("Khu vực:" + state_);
                                   citycheck.setText("Thành phố:" + city);
                                   timecheck.setText("Loại bánh:" + times);
-                              }
-                              else
-                              {
-                                  Toast.makeText(getActivity(),"Code order is not exist in database!!!",Toast.LENGTH_LONG).show();
-                                  codecheck.setText("Mã hóa đơn:");
-                                  namecheck.setText("Tên người đặt:");
-                                  pricecheck.setText("Tổng tiền:");
-                                  phonecheck.setText("Số điện thoại:");
-                                  cakecheck.setText("Thời gian đặt:");
-                                  statecheck.setText("Khu vực:");
-                                  citycheck.setText("Thành phố:");
-                                  timecheck.setText("Loại bánh:");
+                                  break;
                               }
                           }
+                          i=i+1;
+                      }
+                      if (i== snapshot.getChildrenCount()) {
+                          Toast.makeText(getActivity(), "Code order is not exist in database!!!", Toast.LENGTH_LONG).show();
+                          codecheck.setText("Mã hóa đơn:");
+                          namecheck.setText("Tên người đặt:");
+                          pricecheck.setText("Tổng tiền:");
+                          phonecheck.setText("Số điện thoại:");
+                          cakecheck.setText("Thời gian đặt:");
+                          statecheck.setText("Khu vực:");
+                          citycheck.setText("Thành phố:");
+                          timecheck.setText("Loại bánh:");
                       }
                     }
 
