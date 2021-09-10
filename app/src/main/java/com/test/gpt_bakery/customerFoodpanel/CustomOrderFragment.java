@@ -66,55 +66,58 @@ public class CustomOrderFragment extends Fragment {
                     @Override
                     public void onDataChange(DataSnapshot snapshot) {
                         int i=0;
-                      for (DataSnapshot snapshot1:snapshot.getChildren())
-                      {
-                          Customer c=snapshot1.getValue(Customer.class);
-                          String codes=c.codes;
-                          String name_=c.Name;
-                          String price_=c.prices;
-                          String phoness= c.MobileNo;
-                          String cakes=c.cakes;
-                          String state_=c.State;
-                          String city=c.City;
-                          String times=c.times;
-                          if (codeorder.getText().toString().isEmpty())
-                          {
-                              Toast.makeText(getActivity(),"Please input correct code order!!!",Toast.LENGTH_LONG).show();
-                              codecheck.setText("Mã hóa đơn:");
-                              namecheck.setText("Tên người đặt:");
-                              pricecheck.setText("Tổng tiền:");
-                              phonecheck.setText("Số điện thoại:");
-                              cakecheck.setText("Thời gian đặt:");
-                              statecheck.setText("Khu vực:");
-                              citycheck.setText("Thành phố:");
-                              timecheck.setText("Loại bánh:");
-                          }
-                          else {
-                              if (codes.equals(codeorder.getText().toString())) {
-                                  codecheck.setText("Mã hóa đơn:" + codes);
-                                  namecheck.setText("Tên người đặt:" + name_);
-                                  pricecheck.setText("Tổng tiền:" + price_);
-                                  phonecheck.setText("Số điện thoại:" + phoness);
-                                  cakecheck.setText("Thời gian đặt:" + cakes);
-                                  statecheck.setText("Khu vực:" + state_);
-                                  citycheck.setText("Thành phố:" + city);
-                                  timecheck.setText("Loại bánh:" + times);
-                                  break;
-                              }
-                          }
-                          i=i+1;
-                      }
-                      if (i== snapshot.getChildrenCount()) {
-                          Toast.makeText(getActivity(), "Code order is not exist in database!!!", Toast.LENGTH_LONG).show();
-                          codecheck.setText("Mã hóa đơn:");
-                          namecheck.setText("Tên người đặt:");
-                          pricecheck.setText("Tổng tiền:");
-                          phonecheck.setText("Số điện thoại:");
-                          cakecheck.setText("Thời gian đặt:");
-                          statecheck.setText("Khu vực:");
-                          citycheck.setText("Thành phố:");
-                          timecheck.setText("Loại bánh:");
-                      }
+                        if (codeorder.getText().toString().isEmpty())
+                        {
+                            Toast.makeText(getActivity(),"Please input correct code order!!!",Toast.LENGTH_SHORT).show();
+                            codecheck.setText("Mã hóa đơn:");
+                            namecheck.setText("Tên người đặt:");
+                            pricecheck.setText("Tổng tiền:");
+                            phonecheck.setText("Số điện thoại:");
+                            cakecheck.setText("Thời gian đặt:");
+                            statecheck.setText("Khu vực:");
+                            citycheck.setText("Thành phố:");
+                            timecheck.setText("Loại bánh:");
+                        }
+                        else{
+                            for (DataSnapshot snapshot1:snapshot.getChildren())
+                            {
+                                Customer c=snapshot1.getValue(Customer.class);
+                                String codes=c.codes;
+                                String name_=c.Name;
+                                String price_=c.prices;
+                                String phoness= c.MobileNo;
+                                String cakes=c.cakes;
+                                String state_=c.State;
+                                String city=c.City;
+                                String times=c.times;
+
+
+                                if (codes.equals(codeorder.getText().toString())) {
+                                    codecheck.setText("Mã hóa đơn:" + codes);
+                                    namecheck.setText("Tên người đặt:" + name_);
+                                    pricecheck.setText("Tổng tiền:" + price_);
+                                    phonecheck.setText("Số điện thoại:" + phoness);
+                                    cakecheck.setText("Thời gian đặt:" + cakes);
+                                    statecheck.setText("Khu vực:" + state_);
+                                    citycheck.setText("Thành phố:" + city);
+                                    timecheck.setText("Loại bánh:" + times);
+                                    break;
+
+                                }
+                                i=i+1;
+                            }
+                            if (i== snapshot.getChildrenCount()) {
+                                Toast.makeText(getActivity(), "Code order is not exist in database!!!", Toast.LENGTH_SHORT).show();
+                                codecheck.setText("Mã hóa đơn:");
+                                namecheck.setText("Tên người đặt:");
+                                pricecheck.setText("Tổng tiền:");
+                                phonecheck.setText("Số điện thoại:");
+                                cakecheck.setText("Thời gian đặt:");
+                                statecheck.setText("Khu vực:");
+                                citycheck.setText("Thành phố:");
+                                timecheck.setText("Loại bánh:");
+                            }
+                        }
                     }
 
                     @Override
