@@ -35,6 +35,7 @@ public class CartRecViewAdapter extends RecyclerView.Adapter<CartRecViewAdapter.
     }
 
     @Override
+/// holder for the element of the Cart
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         holder.tvName.setText(cookies.get(position).getName());
         holder.tvPrice.setText(String.valueOf(cookies.get(position).getTotalPrice()));
@@ -43,17 +44,18 @@ public class CartRecViewAdapter extends RecyclerView.Adapter<CartRecViewAdapter.
         holder.btnIncrease.setOnClickListener(view -> listener.onChangeQuantityClick(cookies.get(position), "+", position));
         holder.btnDecrease.setOnClickListener(view -> listener.onChangeQuantityClick(cookies.get(position), "-", position));
     }
-
+/// set Cart 
     public void setCart(ArrayList<Cookie> cookies) {
         this.cookies = cookies;
         notifyDataSetChanged();
     }
 
     @Override
+/// count the number of cookies into Cart
     public int getItemCount() {
         return cookies.size();
     }
-
+/// define ViewHolder for element
     public static class ViewHolder extends RecyclerView.ViewHolder{
         private final ImageView image;
         private final TextView tvName;
