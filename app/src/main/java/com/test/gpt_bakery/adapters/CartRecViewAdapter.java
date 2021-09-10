@@ -21,21 +21,22 @@ public class CartRecViewAdapter extends RecyclerView.Adapter<CartRecViewAdapter.
     ArrayList<Cookie> cookies = new ArrayList<>();
     Context mContext;
     private changeQuantityListener listener;
-
+	
     public CartRecViewAdapter(Context mContext, changeQuantityListener changeQuantityListener) {
         this.mContext = mContext;
         this.listener = changeQuantityListener;
     }
-/////////////////
+/// passing data  from homepage to Cart and create listener to change quantity
     @NonNull
     @Override
+/// Create viewholder for the element
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.cart_list, parent, false);
         return new ViewHolder(view);
     }
 
     @Override
-/// holder for the element of the Cart
+/// input the element of the Cart
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         holder.tvName.setText(cookies.get(position).getName());
         holder.tvPrice.setText(String.valueOf(cookies.get(position).getTotalPrice()));
