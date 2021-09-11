@@ -5,6 +5,7 @@ public class Customer {
     public Customer(){
 
     }
+	/// define info customer
     public Customer(String EmailId,String City,String MobileNo,String Name,String State )
     {
         this.City=City;
@@ -13,7 +14,7 @@ public class Customer {
         this.Name=Name;
         this.State=State;
     }
-
+	/// update more info customer
     public Customer(String city, String mobileNo, String name, String state, String times, String cakes, String prices,String codes) {
         City = city;
         MobileNo = mobileNo;
